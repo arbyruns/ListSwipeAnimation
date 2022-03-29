@@ -20,7 +20,7 @@ struct ContentView: View {
                 GeometryReader { geo in
                     VStack {
                         List(0 ..< 5){ reminder in
-                            userNotificationRowView(geo: geo, showAlert: $showAlert)
+                            CardRowView(geo: geo, showAlert: $showAlert)
                                 .frame(height: 150)
                                 .padding(.vertical)
                                 .listRowBackground(Color.clear)
@@ -57,7 +57,8 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct userNotificationRowView: View {
+/// Main card view
+struct CardRowView: View {
     @State var offset = CGSize.zero
     @State var rotate = 00.0
     @State var animationShakeAmount = 5.0 // higher the number the more of an angle of the card
